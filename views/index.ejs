@@ -3,18 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TO-DO-LIST</title>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
     
-    <form action="server" method="post">
-        <input type="text" name="input">
-        <button type="submit"> Submit</button>
-    </form>
-    <ul>
+    <div class="box" id="heading">
+        <h1>To DO List</h1>
+    </div>
+    <div class="box">
        <% for(let i=0;i<listItems.length;i++) { %>
-          <li><%=listItems[i]%></li>  
+        <div class="item">
+            <input type="checkbox">
+            <p><%=listItems[i]%></p> 
+        </div>
+         
        <% } %>
-    </ul>
+       
+       <form action="server" method="post" class="item">
+            <input type="text" name="input" placeholder="New Item">
+            <button type="submit">+</button>
+        </form>
+       </div>
 </body>
 </html>
